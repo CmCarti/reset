@@ -1,0 +1,195 @@
+@import "mixins/mixins";
+
+// Variables
+    // Default the system fonts
+$font-stack: 
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue", Arial, sans-serif !default;
+    // list-style
+$list-style: none;
+// Grid settings
+$container-max-widths: (    
+    md: 720px,
+    lg: 960px,
+    xl: 1170px
+);
+$gutter: 15px;
+// Reset the box-model and decorations
+html * {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    
+}
+html {
+    font-size: 14px;
+    @media only screen and (min-width : 768px){
+        font-size: 16px;
+    }
+}
+// Set the body font size
+body {
+    font-family: $font-stack;
+    font-size: 14px;
+    max-width: 100%;
+    width: 100%;
+  
+}
+// Set heading font sizes and weight
+h1, h2, h3, h4, h5, h6 { 
+    font-weight: 600; 
+    margin-bottom: 1rem;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+// Ul list-style
+ul{ list-style: $list-style; }
+
+// Grid System (Flexbox)
+.container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    
+    @include md{
+        max-width: map-get($container-max-widths, md);
+    }
+    @include lg{
+        max-width: map-get($container-max-widths, lg);
+    }
+    @include xl{
+        max-width: map-get($container-max-widths, xl);
+    }
+}
+.row { 
+    position: relative;
+    display: block;
+    
+    max-width: 100%;    
+    @include md{
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        flex: 0 1 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+.col {
+    position: relative;    
+    padding-left: $gutter;
+    padding-right: $gutter;
+    flex: 1;    
+    margin-bottom: 1rem;
+    
+}
+
+@include md{
+    div[class*=" col-"]{
+        flex-grow: 0;
+        flex-direction: row;
+    }
+    .col-1   { 
+        flex-basis:(100% / 12);
+        max-width:(100% / 12);
+    }
+    .col-2   { 
+        flex-basis:(100% / 6);
+        max-width:(100% / 6);
+    }
+    .col-3   { 
+        flex-basis:(100% / 4);
+        max-width:(100% / 4);
+      }
+    .col-4   { 
+        flex-basis:(100% / 3);
+        max-width:(100%/3);
+    }
+    .col-5   { 
+        flex-basis:(100% / 2.4);
+        max-width:(100%/2.4);
+     }
+    .col-6   { 
+        flex-basis:(100% / 2);
+        max-width:(100% / 2);
+      }
+    .col-7   { 
+        flex-basis:(100% / 1.714285714285714);
+        max-width:(100% / 1.714285714285714);
+    }
+    .col-8   { 
+        flex-basis:(100% / 1.5);
+        max-width:(100%/1.5);
+     }
+    .col-9   { 
+        flex-basis:(100% / 1.333333333333333);
+        max-width:(100% / 1.333333333333333);
+     }
+    .col-10  { 
+        flex-basis:(100% / 1.2);
+        max-width:(100%/1.2);
+    }
+    .col-11  { 
+        flex-basis:(100% / 1.090909090909091);
+        max-width:(100% / 1.090909090909091);
+    }
+    .col-12  { 
+        flex-basis:100%;
+        max-width: 100%;
+     }
+}
+@include lg{
+
+}
+
+// Specialized Helper Classes
+
+.lead { font-size: 1.25rem; }
+
+.btn {
+    // Edit default button color here
+    background: #ffffff;
+    padding: 10px;
+    @include box-shadow(2);
+    display: inline-block;
+    color: #313131;
+    border-radius: 2px;
+}
+
+.center-col {
+    align-self: center;
+}
+.space-between {
+    justify-content: space-between;
+}
+.center { text-align: center; }
+
+.responsive-image {
+    max-width: 100%;
+    display: inline-block;
+}
+.flex-vertical {
+    flex-direction: column;
+}
+
+
+
