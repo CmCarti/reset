@@ -1,1 +1,0 @@
-const init = (btn, nav) => $(btn).on('click', () => [$(btn).get(), $(nav).get()].map((element) => element.classList.contains('active') ? element.classList.remove('active') : element.classList.add('active')));

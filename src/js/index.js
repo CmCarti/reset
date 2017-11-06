@@ -76,5 +76,5 @@ var initializeMenu = function() {
 
 
 
-if(document.querySelector('.input-cotnainer') != undefined) initializeForms();
-if(document.querySelector('.navigation-button') != undefined) initializeMenu();
+initializeForms();
+initializeMenu();
