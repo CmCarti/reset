@@ -1,12 +1,4 @@
-/src/css/style.scss
-/src/css/style.css
-/src/css/style.min.css
-/src/css/nav.css
-/src/css/nav.min.css
-/src/css/reset.css
-/src/css/reset.min.css
-/src/css/mixins/mixins.css
-/src/css/mixins/mixins.min.css
+*.css
 
 /test/
 
