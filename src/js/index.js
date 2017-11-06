@@ -1,3 +1,8 @@
+/*
+    Javascript for websites, optimized for IE versions < Edge
+
+*/
+
 // Form Script
 var initializeForms = function() {
 // Grab the input containers
