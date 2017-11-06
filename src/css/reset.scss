@@ -19,6 +19,9 @@ $container-max-widths: (
 );
 $form-active-color: #FEF683;
 $gutter: 15px;
+// Set the padding for the header and where the menu will be positioned below
+$header-padding: 1rem; 
+
 // Reset the box-model and decorations
 html * {
     margin: 0;
@@ -175,8 +178,8 @@ header * {
 }
 header {
     // Add a default padding to the header that can easily be altered without getting too specific
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: $header-padding;
+    padding-bottom: $header-padding;
 }
 
 // Specialized Helper Classes
@@ -298,7 +301,7 @@ header {
     position: absolute;
     background: #f1f1f1;
     height: 100vh;
-    top: 1rem;
+    top: $header-padding;
     left: 0;
     ul {
         font-size: 16px;
