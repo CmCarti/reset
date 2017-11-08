@@ -41,7 +41,7 @@ html {
 body {
     font-family: $font-stack;
     font-size: 1rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 // Set heading font sizes and weight
 h1, h2, h3, h4, h5, h6 { 
@@ -54,7 +54,7 @@ h3 { font-size: 1.75rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
-
+h1.big { font-size: 4rem; }
 p {
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -70,7 +70,7 @@ input:not([type="submit"]), textarea {
 input[type="submit"] {
     font-size: 1.125rem;
 }
-
+div { z-index: 2; position: relative;}
 // Ul list-style
 ul{ list-style: $list-style; }
 
@@ -248,7 +248,12 @@ header {
     color: #313131;
     border-radius: 2px;
 }
-
+.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
 .center-col {
     align-self: center;
 }
@@ -318,6 +323,11 @@ header {
 
 
 // Menu Styles
+.fixed-header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
 .navigation-button {
     width: 40px;
     height: 40px;
@@ -397,5 +407,9 @@ header {
     }
 }
 
+/* Animation Helpers */
+.hidden {
+    opacity: 0;
+}
 
 
