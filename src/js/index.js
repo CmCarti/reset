@@ -150,22 +150,23 @@ var initializeScrollingElements = function(fixedHeader, elementArray) {
         elementArray.map(function(entry){            
             var element = document.querySelector(entry[0]);
             var animation = entry[1];             
-            if(isInViewport(element)){
-                if(entry[2] != undefined || entry[2] != null){
-                    var inners = [].slice.call(element.querySelectorAll(entry[2]));
-                    inners.forEach(function(inner, index){
+            if(entry[2] != undefined || entry[2] != null) {
+                var inners = [].slice.call(element.querySelectorAll(entry[2]));
+                inners.forEach(function(inner, index){
+                    if(isInViewport(inner)){
                         setTimeout(function(){                              
                             inner.classList.remove('hidden');
                             inner.classList.add('animated', animation);
-                        }, entry[3] * index);
-                    });
-                    
+                        }, entry[3] * index); 
                     }
-                 else {
+                })
+            } else {   
+            
+                if(isInViewport(element)){               
                     element.classList.remove('hidden');
-                    element.classList.add('animated', animation);                
+                    element.classList.add('animated', animation);                                
                 }
-            }
+        }
         
         }); 
     });
